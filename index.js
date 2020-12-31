@@ -5,9 +5,7 @@ const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 
 // Routes imports
-const cookieRoute = require('./routes/cookie');
 const register = require('./routes/register');
-const firstUser = require('./routes/firstUser');
 const login = require('./routes/login');
 const logout = require('./routes/logout');
 const comboUpdate = require('./routes/comboUpdate');
@@ -30,10 +28,6 @@ mongoose.connect(
 
 app.use(express.json({ limit: '1mb' }));
 app.use(cookieParser());
-
-app.use('/api/users', firstUser);
-
-app.use('/api/cookie', cookieRoute);
 
 app.use('/api/beatmaps', beatmaps);
 app.use('/api/beatmaps/easy', beatmapsEasy);
