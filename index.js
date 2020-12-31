@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
-const corst = require('cors');
+const cors = require('cors');
 
 // Routes imports
 const register = require('./routes/register');
