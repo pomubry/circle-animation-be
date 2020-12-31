@@ -21,12 +21,13 @@ const port = process.env.PORT || 5000;
 const corsOptions = {
   origin: true,
   credentials: true,
+  maxAge: 86400,
 };
 
 app.use(express.json({ limit: '1mb' }));
 app.use(cookieParser());
-app.options('*', cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
+
 mongoose.connect(
   process.env.DB_CONNECT,
   { useNewUrlParser: true, useUnifiedTopology: true },
