@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
+const corst = require('cors');
 
 // Routes imports
 const register = require('./routes/register');
@@ -28,6 +29,7 @@ mongoose.connect(
 
 app.use(express.json({ limit: '1mb' }));
 app.use(cookieParser());
+app.use(cors());
 
 app.use('/api/beatmaps', beatmaps);
 app.use('/api/beatmaps/easy', beatmapsEasy);
