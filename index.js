@@ -25,8 +25,8 @@ const corsOptions = {
 
 app.use(express.json({ limit: '1mb' }));
 app.use(cookieParser());
-// app.use(cors());
 app.options('*', cors(corsOptions));
+app.use(cors());
 mongoose.connect(
   process.env.DB_CONNECT,
   { useNewUrlParser: true, useUnifiedTopology: true },
