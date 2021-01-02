@@ -20,7 +20,7 @@ const port = process.env.PORT || 5000;
 
 const corsOptions = {
   origin: 'https://circle-animation-fe.netlify.app',
-  credentials: true,
+  // credentials: true,
   // maxAge: 86400,
 };
 
