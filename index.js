@@ -21,7 +21,7 @@ const port = process.env.PORT || 5000;
 const corsOptions = {
   origin: true,
   credentials: true,
-  maxAge: 86400,
+  // maxAge: 86400,
 };
 
 app.use(express.json({ limit: '1mb' }));
