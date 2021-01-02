@@ -14,6 +14,8 @@ router.get('/', (req, res) => {
     res.cookie('circle-animation-token', 'token', {
       maxAge: 1,
       httpOnly: true,
+      secure: process.env.NODE_ENV === 'production' ? true : false,
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
     });
     res.json({ message: 'Logged out!' });
   } catch (error) {
