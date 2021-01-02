@@ -9,7 +9,7 @@ const createJWT = (payload, res) => {
     maxAge: 3 * 24 * 60 * 60 * 1000,
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production' ? true : false,
-    sameSite: 'none',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
   });
 };
 
