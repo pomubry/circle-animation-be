@@ -1,5 +1,5 @@
+import "dotenv/config";
 import express from "express";
-import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -12,7 +12,6 @@ import scores from "./routes/scores";
 import isAuthenticated from "./routes/isAuthenticated";
 
 // config
-dotenv.config();
 const port = process.env.PORT || 5000;
 const corsOptions: cors.CorsOptions = {
   origin: [

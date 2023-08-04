@@ -36,4 +36,3 @@ export const beatmapSchema = z.object({
     })
   ),
 });
-export type Beatmap = z.infer<typeof beatmapSchema>;
