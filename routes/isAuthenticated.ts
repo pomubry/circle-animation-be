@@ -3,7 +3,7 @@ import cookieValidation from "../middlewares/cookieValidation";
 
 const router = express.Router();
 
-router.get("/", cookieValidation, async (_, res) => {
+router.post("/", cookieValidation, async (_, res) => {
   return res.json({ isAuthenticated: true });
 });
 
