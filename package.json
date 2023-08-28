@@ -4,7 +4,7 @@
   "description": "Backend for circle animation",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf dist && kysely-codegen && tsc",
+    "build": "rimraf dist && npm run migration && kysely-codegen && tsc",
     "predev": "kysely-codegen",
     "dev": "tsx --watch index.ts",
     "start": "node dist/index.js",
