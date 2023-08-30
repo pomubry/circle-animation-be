@@ -10,14 +10,15 @@ import logout from "./routes/logout";
 import beatmaps from "./routes/beatmaps";
 import scores from "./routes/scores";
 import isAuthenticated from "./routes/isAuthenticated";
+import echo from "./routes/echo";
 
 // config
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
+console.log("PORT:", port);
+console.log("ORIGIN:", process.env.ORIGIN);
+
 const corsOptions: cors.CorsOptions = {
-  origin: [
-    process.env.ORIGIN ? process.env.ORIGIN : "",
-    "http://localhost:3000",
-  ],
+  origin: [process.env.ORIGIN ? process.env.ORIGIN : ""],
   credentials: true,
 };
 
@@ -35,6 +36,7 @@ app.use("/api/logout", logout);
 app.use("/api/beatmaps", beatmaps);
 app.use("/api/scores", scores);
 app.use("/api/isAuthenticated", isAuthenticated);
+app.use("/api/echo", echo);
 
 app.listen(port, () => {
   console.log(`Listening to http://localhost:${port}`);

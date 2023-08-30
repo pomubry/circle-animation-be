@@ -5,7 +5,8 @@ import { Migrator, FileMigrationProvider } from "kysely";
 import db from "./index";
 
 async function migrateToLatest() {
-  console.log("Dokku DB URL", process.env.DATABASE_URL);
+  console.log("Dokku DATABASE_URL", process.env.DATABASE_URL);
+
   const migrator = new Migrator({
     db,
     provider: new FileMigrationProvider({

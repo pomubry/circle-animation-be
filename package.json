@@ -1,5 +1,5 @@
 {
-  "name": "cani-be",
+  "name": "cani-express",
   "version": "2.0.0",
   "description": "Backend for circle animation",
   "main": "dist/index.js",
