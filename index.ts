@@ -14,8 +14,8 @@ import echo from "./routes/echo";
 
 // config
 const port = process.env.PORT || 3001;
-console.log("PORT:", port);
 console.log("ORIGIN:", process.env.ORIGIN);
+console.log("PORT:", port);
 
 const corsOptions: cors.CorsOptions = {
   origin: [process.env.ORIGIN ? process.env.ORIGIN : ""],

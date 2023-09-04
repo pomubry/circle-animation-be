@@ -20,7 +20,7 @@ export default (payload: CookiePayload, res: Response) => {
   res.cookie(process.env.COOKIE_NAME, token, {
     maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day
     httpOnly: true,
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
     sameSite: process.env.SAME_SITE as "strict" | "lax" | "none",
     signed: true,
   });
